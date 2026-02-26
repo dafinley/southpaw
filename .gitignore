@@ -1,0 +1,45 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Rust
+/target
+**/target
+
+# Node
+node_modules/
+dist/
+coverage/
+*.node
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Go
+*.test
+coverage.out
+cover.out
+
+# Deno WASM build output
+bindings/deno/pkg/
+
+# Local contributor caches
+.cache/
+.cargo-local/
+
+# Environment / secrets
+.env
+.env.*

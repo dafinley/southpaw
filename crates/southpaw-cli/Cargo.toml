@@ -1,0 +1,16 @@
+[package]
+name = "southpaw-cli"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+description = "CLI for southpaw runtime posture checks"
+
+[[bin]]
+name = "southpaw"
+path = "src/main.rs"
+
+[dependencies]
+southpaw-core = { path = "../southpaw-core" }
+serde_json.workspace = true

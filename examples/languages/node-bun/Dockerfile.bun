@@ -1,0 +1,16 @@
+# Build from repo root:
+# docker build -f examples/languages/node-bun/Dockerfile.bun -t southpaw-bun-demo .
+
+FROM rust:1-bookworm AS southpaw-builder
+WORKDIR /repo
+COPY . .
+RUN cargo build -p southpaw-cli --release
+
+FROM oven/bun:1
+WORKDIR /app
+COPY --from=southpaw-builder /repo/target/release/southpaw /usr/local/bin/southpaw
+COPY examples/languages/node-bun/app.mjs /app/app.mjs
+COPY examples/languages/node-bun/southpaw.yaml /app/southpaw.yaml
+USER bun
+ENTRYPOINT ["southpaw", "check", "--policy", "/app/southpaw.yaml", "--exec", "bun", "/app/app.mjs"]
+

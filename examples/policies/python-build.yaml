@@ -1,0 +1,33 @@
+version: "1.0"
+
+identity:
+  require_non_root: false
+  allowed_uids: []
+
+filesystem:
+  allowed_writable_paths:
+    - /tmp
+    - /var/tmp
+    - /root/.cache
+    - /home/app/.cache
+    - /usr/local
+  deny_writable_root: false
+
+sandbox:
+  require_seccomp: false
+  require_lsm: false
+  require_no_new_privs: false
+
+network:
+  block_metadata: false
+  metadata_probe_port: 80
+  metadata_probe_timeout_ms: 200
+  allowed_egress_hosts: []
+
+severity:
+  warn_threshold: 5
+  fail_threshold: 10
+
+enforcement:
+  mode: warn
+

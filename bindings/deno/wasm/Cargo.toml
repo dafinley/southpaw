@@ -1,0 +1,17 @@
+[package]
+name = "southpaw-deno-wasm"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+description = "WASM wrapper for southpaw core (scaffold)"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+serde_json.workspace = true
+southpaw-core = { path = "../../../crates/southpaw-core" }
+wasm-bindgen = "0.2"
+

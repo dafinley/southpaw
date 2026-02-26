@@ -1,0 +1,9 @@
+[package]
+name = "southpaw-rust-demo"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+southpaw = { path = "../../../crates/southpaw" }

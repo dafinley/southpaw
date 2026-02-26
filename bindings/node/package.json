@@ -1,0 +1,20 @@
+{
+  "name": "@southpaw/southpaw",
+  "version": "0.1.0",
+  "description": "Node.js and Bun wrapper for southpaw",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "types": "./index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "native"
+  ],
+  "scripts": {
+    "build:native": "echo \"TODO: wire napi build pipeline\"",
+    "test:import": "node --input-type=module -e \"import('./index.js').then(m => console.log(typeof m.checkPosture))\""
+  }
+}
